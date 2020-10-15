@@ -8,7 +8,7 @@ Download the code from the repository and open with PYCHARM or CommandLine
 
 Full List of Interperters needed to run this code inside of PYCHARM
 
-Download All of These interperters 
+Download All of These interperters: 
 
 Pillow	8.0.0	
 
