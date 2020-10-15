@@ -3,6 +3,7 @@ import cv2
 import sys
 import os
 import face_recognition
+import pickle
 
 
 
@@ -17,6 +18,13 @@ cap = cv2.VideoCapture(0)
 face = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
 recognizer = cv2.face.LBPHFaceRecognizer_create()
 recognizer.read("train.yml")
+
+the_labesl = {"person_name": 1}
+with open("labels.pickle", 'rb') as f:
+    labels = pickle.load(f)
+    labels = {v:k for k,v in the_labesl.items()}
+
+
 
 
 
@@ -75,8 +83,9 @@ while True:
 
 # recognize the image
         id_, conf = recognizer.predict(roi_gray)
-        if conf >= 45 and conf <= 80:
+        if conf >= 45:
             print(id_)
+            print(labels[id_])
 
         cv2.imwrite(img_item, roi_gray)
 
