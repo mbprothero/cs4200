@@ -19,42 +19,10 @@ face = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_de
 recognizer = cv2.face.LBPHFaceRecognizer_create()
 recognizer.read("train.yml")
 
-the_labesl = {"person_name": 1}
+the_labels = {"person_name": 1}
 with open("labels.pickle", 'rb') as f:
     labels = pickle.load(f)
-    labels = {v:k for k,v in the_labesl.items()}
-
-
-
-
-
-# Import sample pictures and learn how recognize it
-
-
-
-
-
-
-# Create a array of known face encodings
-
-
-
-
-
-
-# Initialize Variables of FaceLocation, FaceEncoding, FaceNames, Process the frame
-
-
-
-
-
-
-
-
-
-
-
-
+    labels = {v:k for k,v in the_labels.items()}
 
 
 
@@ -86,6 +54,11 @@ while True:
         if conf >= 45:
             print(id_)
             print(labels[id_])
+            font = cv2.FONT_HERSHEY_SIMPLEX
+            name = labels[id_]
+            color = (255, 255, 255)
+            stroke = 1
+            cv2.putText(frame, name, (x, y), font, 1, color, stroke, cv2.LINE_AA)
 
         cv2.imwrite(img_item, roi_gray)
 
