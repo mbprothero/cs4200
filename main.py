@@ -12,9 +12,11 @@ cascPath = sys.argv[0]
 # Get a reference to the Video Camera
 cap = cv2.VideoCapture(0)
 
+
 # face = cv2.CascadeClassifier('cascades/data/haarcascade_frontalface_alt2.xml')
 face = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
-
+recognizer = cv2.face.LBPHFaceRecognizer_create()
+recognizer.read("train.yml")
 
 
 
@@ -65,10 +67,16 @@ while True:
 
 #Draw a box around the face
     for (x, y, w, h) in faces:
-        print(x, y, w, h)
+        # print(x, y, w, h)
         roi_gray = gray[y:y + h, x:x + w]
         roi_color = frame[y:y + h, x:x + w]
         img_item = "my-image.png"
+
+
+# recognize the image
+        id_, conf = recognizer.predict(roi_gray)
+        if conf >= 45 and conf <= 80:
+            print(id_)
 
         cv2.imwrite(img_item, roi_gray)
 
