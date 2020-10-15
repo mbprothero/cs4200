@@ -8,7 +8,7 @@ Download the code from the repository and open with PYCHARM or CommandLine
 
 Full List of Interperters needed to run this code inside of PYCHARM
 
->>>> Download All of These interperters 
+Download All of These interperters 
 
 Pillow	8.0.0	8.0.0
 click	7.1.2	7.1.2
@@ -21,6 +21,6 @@ opencv-python	4.4.0.44	4.4.0.44
 pip	20.2.3	20.2.3
 setuptools	50.3.1	50.3.1
 
->>>>>
+
 
 Run the program and Hit the letter "p" to end the program 
