@@ -5,12 +5,14 @@ HELLO,
 
 Welcome to Facial Identification
 
-Download the code from the repository and open with PYCHARM or CommandLine
+Download the code from the repository and open with PYCHARM, SPYDER(andaconda) or CommandLine
 
 ============================================================================
-Full List of Interperters needed to run this code inside of PYCHARM
+Full List of Interperters / packages you will needed to run this code inside of PYCHARM, SPYDER or CommandLine
 
-Download All of These interperters: 
+You will need to download CV2  .....No exception needs to be installed!!
+Also,
+Download All of These interperters inside of you IDE/commandLine: 
 
 Pillow	8.0.0	
 
