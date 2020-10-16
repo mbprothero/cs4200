@@ -5,14 +5,10 @@ import os
 import face_recognition
 import pickle
 
-
-
 cascPath = sys.argv[0]
-
 
 # Get a reference to the Video Camera
 cap = cv2.VideoCapture(0)
-
 
 # face = cv2.CascadeClassifier('cascades/data/haarcascade_frontalface_alt2.xml')
 face = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
@@ -68,6 +64,7 @@ while True:
         height = y + h
 
 # cv2.rectangle(frame, (x, y), (width, height), color, stroke)
+# draw the rectangle
         cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
 
