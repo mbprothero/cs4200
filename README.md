@@ -13,7 +13,7 @@ Full List of Interpreters / packages you will NEED to run this code inside of SP
 
 You will need to download CV2  .....No exception, this needs to be installed!!
 Also,
-Download All of These interpreters/packages inside of you IDE/commandLine: 
+Download All of These interpreters/packages inside of SPYDER(IPython console)/commandLine: 
 
 opencv-contrib-python	4.4.0.44	
 
