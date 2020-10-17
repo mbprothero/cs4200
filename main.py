@@ -1,18 +1,34 @@
+# Facial Recognition 
+# CS 4200 Fall 2020
+# Darius Wortham & Michael Prothero
+
+# This program will Recognize Faces using algorithms to detect 
+# your face in Real-Time 
+# After Detecting a face, the Algorith will identify who that person(face) is.
+
+# To quit press 'q' on keyboard 
+
+
+
 import numpy as np
 import cv2
 import sys
 import os
 import face_recognition
-import pickle
+import pickle #for converting python objects 
+
 
 cascPath = sys.argv[0]
 
 # Get a reference to the Video Camera
 cap = cv2.VideoCapture(0)
 
+#xml file that contains Face algorithm for facial recognition
 # face = cv2.CascadeClassifier('cascades/data/haarcascade_frontalface_alt2.xml')
 face = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
 recognizer = cv2.face.LBPHFaceRecognizer_create()
+
+# human-readable structured data format
 recognizer.read("train.yml")
 
 the_labels = {"person_name": 1}
@@ -37,9 +53,11 @@ while True:
 
 
 
-#Draw a box around the face
+# Draw a box around the face
     for (x, y, w, h) in faces:
         # print(x, y, w, h)
+        
+# find the region of interest of the face being used 
         roi_gray = gray[y:y + h, x:x + w]
         roi_color = frame[y:y + h, x:x + w]
         img_item = "my-image.png"
@@ -47,15 +65,18 @@ while True:
 
 # recognize the image
         id_, conf = recognizer.predict(roi_gray)
-        if conf >= 45:
+        if conf >= 45: #confidence
             print(id_)
             print(labels[id_])
             font = cv2.FONT_HERSHEY_SIMPLEX
             name = labels[id_]
+            
+            # color of box
             color = (255, 255, 255)
             stroke = 1
             cv2.putText(frame, name, (x, y), font, 1, color, stroke, cv2.LINE_AA)
 
+#images read as numpy
         cv2.imwrite(img_item, roi_gray)
 
         color = (255, 0, 0)
@@ -64,7 +85,7 @@ while True:
         height = y + h
 
 # cv2.rectangle(frame, (x, y), (width, height), color, stroke)
-# draw the rectangle
+# draw the rectangle / color and stroke of box
         cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
 
