@@ -37,7 +37,9 @@ Step6.
 "Pip install all of these from the command line!"
 
 pip install opencv-contrib-python
+
 pip install face-recognition
+
 pip install opencv-python
 
 Step7. Open Files downloaded from repository.
