@@ -8,7 +8,7 @@ HELLO,
 Download the code from the repository and open with Anaconda or CommandLine
 (You may need to download Anaconda)
 
-Step1. Download Anaconda from anaconda.com/products/individual
+Step1. Download Anaconda from anaconda.com/download/
 
 Step2. Create a New Environment (name it whatever you like)
 
