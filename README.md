@@ -12,40 +12,40 @@ Step1. Download Anaconda from https://anaconda.com/download/
 
 Step2. Go to the official OpenCV site to download the complete OpenCV package. Pick a version you like https://opencv.org/releases/
 
-Step3. Create a New Environment (name it whatever you like)
+Step3. Create a New Environment (name it whatever you like) 
+Ex: for windows open Anaconda Prompt type "conda create -n somename spyder=4" without the quotations
+
 
 Step4.
 Full List of packages you will NEED to run this code inside of SPYDER or CommandLine
 
 Download All of These packages inside of New Environment.
 
-Pillow	8.0.0	
+Pillow
 
-click	7.1.2	
+click	
 
-dlib	19.21.0	
+r-dlib	
 
-numpy	1.19.2	
+numpy
 
-pip	20.2.3	
+pip
 
-setuptools	50.3.1
+setuptools	
 
 Step5. Download Spyder inside of new Environment 
 
 Step6. Open Spyder 
 
-Step7.
+Step7. Make sure the folling commands work on console inside of spyder.
 "Pip install all of these from the command line!"
 
 pip install opencv-contrib-python
 
 pip install face-recognition
 
-pip install opencv-python
-
 Step8. Open Files downloaded from repository.
 
 ============================================================================
 
-Run the program and Hit the letter "p" to end the program 
+Run the program 
