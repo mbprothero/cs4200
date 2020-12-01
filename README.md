@@ -5,7 +5,7 @@ HELLO,
 
 Welcome to Facial Identification
 
-Download the code from the repository and open with SPYDER(Anaconda) or CommandLine
+Download the code from the repository and open with Anaconda(SPYDER) or CommandLine
 (You may need to download Anaconda)
 
 ============================================================================
