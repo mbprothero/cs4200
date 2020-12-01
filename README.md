@@ -8,7 +8,7 @@ HELLO,
 Download the code from the repository and open with Anaconda or CommandLine
 (You may need to download Anaconda and opencv)
 
-Step1. Download Anaconda from anaconda.com/download/
+Step1. Download Anaconda from https://anaconda.com/download/
 
 Step2. Go to the official OpenCV site to download the complete OpenCV package. Pick a version you like https://opencv.org/releases/
 
