@@ -31,10 +31,13 @@ recognizer = cv2.face.LBPHFaceRecognizer_create()
 # human-readable structured data format
 recognizer.read("train.yml")
 
-the_labels = {"person_name": 1}
+the_labels = {"mike": 1}
 with open("labels.pickle", 'rb') as f:
-    labels = pickle.load(f)
-    labels = {v:k for k,v in the_labels.items()}
+    the_labels_one = pickle.load(f)
+
+    
+# invert the labels 
+    the_labels = {v:k for k,v in the_labels.items()}
 
 
 
@@ -47,7 +50,7 @@ while True:
 
 
 
-# Convert the frame to grey color so facial recocognition can read video
+# first Convert the frame to grey color so facial recocognition can read video
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     faces = face.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=6)
 
@@ -57,26 +60,28 @@ while True:
     for (x, y, w, h) in faces:
         # print(x, y, w, h)
         
-# find the region of interest of the face being used 
+# second find the region of interest of the face being used 
         roi_gray = gray[y:y + h, x:x + w]
         roi_color = frame[y:y + h, x:x + w]
         img_item = "my-image.png"
 
 
 # recognize the image
-        id_, conf = recognizer.predict(roi_gray)
+        ID_, conf = recognizer.predict(roi_gray)
         if conf >= 45: #confidence
-            print(id_)
-            print(labels[id_])
-            font = cv2.FONT_HERSHEY_SIMPLEX
-            name = labels[id_]
+            print(ID_)
+            print(the_labels[ID_])
             
-            # color of box
+# put text on box name of the labels 
+            font = cv2.FONT_HERSHEY_SIMPLEX
+            name = the_labels[ID_]
+            
+# color of box draw the box
             color = (255, 255, 255)
             stroke = 1
             cv2.putText(frame, name, (x, y), font, 1, color, stroke, cv2.LINE_AA)
 
-#images read as numpy
+# images read as numpy
         cv2.imwrite(img_item, roi_gray)
 
         color = (255, 0, 0)
